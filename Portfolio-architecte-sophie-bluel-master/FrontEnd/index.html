@@ -7,18 +7,24 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/fad5988e91.js" crossorigin="anonymous"></script>
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 
 </head>
 <body>
+	<div class="editionMod">
+		<img src="/assets/icons/pen-to-square-regular.svg" alt="pen logo">
+		<p>Mode édition</p>
+		<button class="publish" id="publish"> publier les changements </button>
+	</div>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
+			<li onclick="window.location.href = '#'">projets</li>
+			<li onclick="window.location.href = 'mailto:sophie.bluel@test.tld'">contact</li>
+			<li onclick="window.location.href ='login_page.html'">login</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -37,8 +43,14 @@
 	</section>
 	<section id="portfolio">
 		<h2>Mes Projets</h2>
+		<div class="filters">
+			<button class="filter filter_active" id="Tous">Tous</button>
+			<button class="filter" id="Objets">Objets</button>
+			<button class="filter" id="Appartements">Appartements</button>
+			<button class="filter" id="Hôtels">Hôtels & restaurants</button>
+		</div>
 		<div class="gallery">
-			<figure>
+			<!-- <figure>
 				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
 				<figcaption>Abajour Tahina</figcaption>
 			</figure>
@@ -81,7 +93,7 @@
 			<figure>
 				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
 				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure>
+			</figure> -->
 		</div>
 	</section>
 	<section id="contact">
