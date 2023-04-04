@@ -70,3 +70,28 @@ const works = fetch('http://localhost:5678/api/works',{ method:'get'})
         })
     }
 })
+
+const submit = document.querySelector("#submit");
+submit.addEventListener("click", async function(event) {
+    event.preventDefault();
+})
+console.log(sessionStorage.getItem('token'))
+
+if (sessionStorage.getItem('token')) {
+    const body = document.querySelector('body');
+        body.insertAdjacentHTML('afterbegin', `
+        <div class="editionMod">
+		    <img src="/assets/icons/pen-to-square-regular.svg" alt="pen logo">
+		    <p>Mode édition</p>
+		    <button class="publish" id="publish"> publier les changements </button>
+	    </div>`);
+    document.querySelector("#project").remove("#project")
+    const portfolio = document.querySelector('#portfolio');
+        portfolio.insertAdjacentHTML('afterbegin', `
+        <div class="modification">
+			<h2>Mes Projets</h2>
+			<img src="/assets/icons/pen-to-square-regular.svg" alt="pen logo">
+			<p class="modify" >modifier</p>
+		</div>`);
+    document.querySelector(".filters").remove(".filters")
+}

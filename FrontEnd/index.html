@@ -13,11 +13,6 @@
 
 </head>
 <body>
-	<div class="editionMod">
-		<img src="/assets/icons/pen-to-square-regular.svg" alt="pen logo">
-		<p>Mode édition</p>
-		<button class="publish" id="publish"> publier les changements </button>
-	</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -42,7 +37,7 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<h2 id="project">Mes Projets</h2>
 		<div class="filters">
 			<button class="filter filter_active" id="Tous">Tous</button>
 			<button class="filter" id="Objets">Objets</button>
@@ -106,7 +101,7 @@
 			<input type="email" name="email" id="email">
 			<label for="message">Message</label>
 			<textarea name="message" id="message" cols="30" rows="10"></textarea>
-			<input type="submit" value="Envoyer">
+			<input id="submit" type="submit" value="Envoyer">
 		</form>
 	</section>
 </main>
