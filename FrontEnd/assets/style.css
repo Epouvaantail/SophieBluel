@@ -116,7 +116,7 @@ li:hover {
 #introduction figure {
 	flex: 1
 }
-#introduction img {
+#bluel_img {
 	display: block;
 	margin: auto;
 	width: 80%;
@@ -159,7 +159,7 @@ li:hover {
 
 .filter{
 	height: 37px;
-	background: white;
+	background-color: #FFFEF8;
 	border: 1px solid #1D6154;
 	font-family: 'Syne';
 	font-style: normal;
@@ -314,8 +314,231 @@ header, main {
 	height: 16px;
 	margin-left: 31px;
 	margin-right: 11px;
+	cursor: pointer;
 }
 
-.modify {
+.modify_1, .modify_2 {
 	cursor: pointer;
+}
+
+.pen_logo {
+	filter:none;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	width: auto;
+	margin: 0;
+}
+
+.modify_picture {
+	display: flex;
+	align-items: baseline;
+	margin-left: 60px;
+	margin-top: 16px;
+	gap: 11px;
+}
+
+.modale_back {
+	position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.3);
+    animation-fill-mode: both;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modale {
+	position: fixed;
+	z-index: 10001;
+	width: 630px;
+	height: 701px;
+	margin-left:105px;
+	margin-right:105px;
+	background-color: white;
+	border-radius: 10px;
+}
+  
+.modale header {
+	display:flex;
+	justify-content:space-between;
+	background-color: white;
+	margin: 32px 36px auto auto;
+}
+  
+.modale_logo {
+	cursor:pointer;
+	height: 20px;
+	background-color: white;
+	margin-left: 30px;
+}
+ 
+.modale_title {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 30px;
+	text-align: center;
+	background-color: white;
+}
+  
+.gallery_work {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction:row;
+	margin-left:105px;
+	margin-right:105px;
+	gap: 6px;
+	row-gap: 10px;
+	background-color: white;
+}
+
+.work, .work_pic, .work p{
+	background-color: white;
+}
+
+.work_pic {
+	height: 107px;
+}
+
+.work_img {
+	position: relative;
+	z-index: 0;
+	width: 78.12px;
+	height: 104.08px;
+}
+
+.bin_box {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	border-radius: 2px;
+	height: 17px;
+	width: 17px;
+	right: -55px;
+	top: -102px;
+}
+
+.bin {
+	height: 9px;
+	filter: invert(100%);
+}
+
+.mult_arrow_box {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	border-radius: 2px;
+	height: 17px;
+	width: 17px;
+	right: -36px;
+	top: -119px;
+	opacity: 0;
+}
+
+.mult_arrow_box:hover {
+	opacity: 1;
+}
+
+.mult_arrow {
+	height: 9px;
+	filter: invert(100%);	
+}
+
+hr{
+	border-top: 1px solid #B3B3B3;
+	height: 0px;
+	width: 420px;
+}
+
+.modale_btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+}
+
+#submit_pic{
+	border: #1D6154;
+	border-radius: 60px;
+	height: 36px;
+	width: 237px;
+}
+
+.valid_btn {
+	background: #A7A7A7;
+	border: #A7A7A7;
+	width: 237px;
+	height: 36px;
+	border-radius: 60px;
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 32px;
+	cursor: pointer;
+}
+
+#delete {
+	background-color: white;
+	border-color: white;
+	box-shadow: white;
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	color: #D65353;
+}
+
+.send_pic {
+	background-color: white;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	background-color: white;
+}
+
+#titre {
+	border: none;
+	border-radius: 0;
+	width: 420px;
+	height: 51px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-bottom: 21px;
+}
+
+#select_category {
+	border: none;
+	border-radius: 0;
+	width: 427px;
+	height: 51px;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	margin-bottom: 47px;
+}
+
+.line {
+	background-color: white;
 }

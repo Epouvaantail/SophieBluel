@@ -31,7 +31,7 @@ const connect = document.querySelector("#connect").addEventListener("click", fun
 });
 
 
-const submit = document.querySelector("#connect");
-submit.addEventListener("click", async function(event) {
-    event.preventDefault();
+    const submit = document.querySelector("#connect");
+    submit.addEventListener("click", async function(event) {
+        event.preventDefault();
 })
