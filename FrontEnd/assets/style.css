@@ -370,7 +370,7 @@ header, main {
 	margin: 32px 36px auto auto;
 }
   
-.modale_logo {
+.x_logo, .arrow_left {
 	cursor:pointer;
 	height: 20px;
 	background-color: white;
@@ -477,7 +477,7 @@ hr{
 	width: 237px;
 }
 
-.valid_btn {
+#valid_btn {
 	background: #A7A7A7;
 	border: #A7A7A7;
 	width: 237px;
@@ -527,6 +527,7 @@ label {
 	background: #FFFFFF;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	margin-bottom: 21px;
+	margin-top: 10px;
 }
 
 #select_category {
@@ -537,8 +538,77 @@ label {
 	background: #FFFFFF;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	margin-bottom: 47px;
+	margin-top: 10px;
 }
 
 .line {
 	background-color: white;
+}
+
+.title_titre {
+	margin-top: 30px;
+}
+
+.form_place {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.blue_box {
+	background: #E8F1F7;
+	border-radius: 3px;
+	height: 169px;
+	width: 420px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.blue_box p {
+	background-color: #E8F1F7;
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 12px;
+	text-align: center;
+	color: #444444;
+	margin-top: 7px;
+}
+
+.blue_box img {
+	width: 58px;
+	height: 46px;
+	margin-bottom: 21px;
+	background-color: #E8F1F7;
+	color: #1D6154;
+}
+
+.add_pic_btn {
+	width: 173px;
+	height: 36px;
+	background-color: #CBD6DC;
+	border-radius: 50px;
+	border-color: transparent;
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	color: #306685;
+	z-index: 1;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+
+.add_pic_btn input {
+	cursor: pointer;
+	opacity: 0;
+    overflow: hidden;
+    position: absolute;
 }
