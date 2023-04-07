@@ -112,15 +112,13 @@ document.querySelector("#login").addEventListener("click", function (e) {
         logBtn.innerText = "login";
     }
 });
-
-const modifyBtn = document.querySelector(".modification");
-modifyBtn.addEventListener("click", async function() {
+function openModal() {
     const body = document.querySelector('body');
         body.insertAdjacentHTML('afterbegin', `
             <div class="modale_back">
                 <form class="modale">
                     <header>
-                        <img src="assets/icons/xmark-solid.svg" class="modale_logo">
+                        <img src="assets/icons/xmark-solid.svg" class="x_logo">
                     </header>
                     <p class="modale_title"> Galerie photo </p> 
                     <section class="gallery_work">
@@ -156,15 +154,15 @@ modifyBtn.addEventListener("click", async function() {
                 }
         generate(data);
         })
-        const modale_logo = document.querySelector(".modale_logo");
-        modale_logo.addEventListener("click", async function(event){
+        const x_logo = document.querySelector(".x_logo");
+        x_logo.addEventListener("click", async function(event){
             document.querySelector(".modale_back").remove('.modale_back');
         });
-
+    
         const submit_pic = document.querySelector("#submit_pic");
         submit_pic.addEventListener("click", async function(event) {
             event.preventDefault()
-            document.querySelector(".modale header").insertAdjacentHTML('afterbegin', `<img src="assets/icons/arrow-left.svg" class="modale_logo">`);
+            document.querySelector(".modale header").insertAdjacentHTML('afterbegin', `<img src="assets/icons/arrow-left.svg" class="arrow_left">`);
             document.querySelector("#submit_pic").remove("#submit_pic");
             document.querySelector("#delete").remove("#delete");
             document.querySelector(".modale_title").innerText = "Ajout photo";
@@ -176,18 +174,67 @@ modifyBtn.addEventListener("click", async function() {
             modale_send.insertAdjacentHTML('beforeend', `
             <div class="send_pic">
                 <form class="send_pic" action="#" method="post">
-			        <label for="titre">Titre</label>
-			        <input type="text" name="titre" id="titre">
-			        <label for="category">Catégorie</label>
-			        <select name="category" id="select_category">
-                    <option value=""> </option>
-                    <option value="objets">Objets</option>
-                    <option value="appartements">Appartements</option>
-                    <option value="hotels&restaurants">Hôtels & Restaurants</option>
-                    </select>
+                    <div class="blue_box">
+                    <img src="assets/icons/Group.svg">
+                    <span class="add_pic_btn">
+                        <input type="file" name="+ Ajouter photo">
+                        + Ajouter photo
+                    </span>
+                    <p> jpg. png :4mo max</p>
+                    </div>
+                    <div class="form_place">
+			            <label class="title_titre" for="titre">Titre</label>
+			            <input type="text" name="titre" id="titre">
+                    </div>
+                    <div class="form_place">
+			            <label for="category">Catégorie</label>
+			            <select name="category" id="select_category">
+                            <option value=""> </option>
+                            <option value="objets">Objets</option>
+                            <option value="appartements">Appartements</option>
+                            <option value="hotels&restaurants">Hôtels & Restaurants</option>
+                        </select>
+                    </div>
                     <div class="line"><hr></div>
-			        <button class="valid_btn">Valider</button>
+                    <input type="submit" value="Se connecter" id="valid_btn">
 		        </form>
             </div`);
+            document.addEventListener("click", function (e) {
+                if (e.target.classList.contains("arrow_left")) {
+                    const modal = document.querySelector(".rewrite-modal");
+                    document.querySelector(".modale").remove(".modale");
+                    document.querySelector(".modale_back").remove(".modale_back");
+                    openModal();
+                }
             });
-});
+        
+            const validBtn = document.querySelector("#valid_btn");
+            validBtn.addEventListener("click", async function(event) {
+                event.preventDefault()
+                const user = {
+                    "Image": document.querySelector('input[type="file"]').value,
+                    "Titre": document.querySelector('input[type="text"]').value,
+                    "Catégorie": document.querySelector('select[name="category"]').value
+                };
+                console.log(user)
+            });
+        });
+        };
+            const modifyBtn = document.querySelector(".modification");
+            modifyBtn.addEventListener("click", async function() { openModal()})
+            
+                // fetch('http://localhost:5678/api/works',{
+                //     method:'POST',
+                //     headers:{
+                //         'Content-Type': 'application/json;charsert=utf-8'
+                //     },
+                //     body: JSON.stringify(user)
+                // })
+            
+                // .then(response => {
+                //     if(!response.ok) {
+                //         window.alert("Données manquantes ou incorrects")
+                //         throw new Error('Données manquantes ou incorrects');
+                //     }
+                //     return response.json();
+                // })
