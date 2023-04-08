@@ -75,7 +75,6 @@ const submit = document.querySelector("#submit");
 submit.addEventListener("click", async function(event) {
     event.preventDefault();
 })
-console.log(sessionStorage.getItem('token'))
 
 if (sessionStorage.getItem('token')) {
     const body = document.querySelector('body');
@@ -116,6 +115,8 @@ function openModal() {
     const body = document.querySelector('body');
         body.insertAdjacentHTML('afterbegin', `
             <div class="modale_back">
+            </div>
+            <div class="modale_center">
                 <form class="modale">
                     <header>
                         <img src="assets/icons/xmark-solid.svg" class="x_logo">
@@ -130,7 +131,8 @@ function openModal() {
                         <p id="delete">Supprimer la galerie</p>
                     </div>
                 </form>
-	        </div>` );
+            </div>
+	        ` );
         const works = fetch('http://localhost:5678/api/works',{ method:'get'})
         .then(works => works.json())
         .then(data => {
@@ -154,9 +156,17 @@ function openModal() {
                 }
         generate(data);
         })
+
         const x_logo = document.querySelector(".x_logo");
         x_logo.addEventListener("click", async function(event){
             document.querySelector(".modale_back").remove('.modale_back');
+            document.querySelector(".modale").remove('.modale');
+        });
+
+        const mod_back = document.querySelector(".modale_back");
+        mod_back.addEventListener("click", async function(event){
+            document.querySelector(".modale_back").remove('.modale_back');
+            document.querySelector(".modale").remove('.modale');
         });
     
         const submit_pic = document.querySelector("#submit_pic");
@@ -177,7 +187,7 @@ function openModal() {
                     <div class="blue_box">
                     <img src="assets/icons/Group.svg">
                     <span class="add_pic_btn">
-                        <input type="file" name="+ Ajouter photo">
+                        <input class="add_pic_btn" type="file" name="+ Ajouter photo">
                         + Ajouter photo
                     </span>
                     <p> jpg. png :4mo max</p>

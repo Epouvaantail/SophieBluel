@@ -231,7 +231,7 @@ footer nav ul {
 	background-color: white;
 }
 
-/* ******************************************* */
+/* ************************************************************************************ */
 .forgot_pass {
 	width: 100%;
 	display: flex;
@@ -352,6 +352,11 @@ header, main {
     justify-content: center;
 }
 
+.modale_center {
+	display: flex;
+    justify-content: center;
+}
+
 .modale {
 	position: fixed;
 	z-index: 10001;
@@ -425,6 +430,7 @@ header, main {
 	width: 17px;
 	right: -55px;
 	top: -102px;
+	cursor: pointer;
 }
 
 .bin {
