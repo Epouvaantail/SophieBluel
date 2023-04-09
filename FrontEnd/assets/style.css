@@ -584,7 +584,7 @@ label {
 	margin-top: 7px;
 }
 
-.blue_box img {
+.blue_box_img {
 	width: 58px;
 	height: 46px;
 	margin-bottom: 21px;
@@ -618,3 +618,35 @@ label {
     overflow: hidden;
     position: absolute;
 }
+
+output{
+	background-color: transparent;
+	width: 0px;
+	height: 0;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	position: relative;
+  }
+  
+  .output_img{
+	margin: -128px -65px ;
+	width: 129px;
+	height: 169px;
+	position: relative;
+	z-index: 2;
+  }
+  
+  output .image img{
+	height: 100%;
+	width: 100%;
+  }
+  
+  output .image span {
+	position: absolute;
+	top: -4px;
+	right: 4px;
+	cursor: pointer;
+	font-size: 22px;
+	color: transparent;
+  }
