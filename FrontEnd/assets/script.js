@@ -185,12 +185,13 @@ function openModal() {
             <div class="send_pic">
                 <form class="send_pic" action="#" method="post">
                     <div class="blue_box">
-                    <img src="assets/icons/Group.svg">
+                    <img class="blue_box_img" src="assets/icons/Group.svg">
                     <span class="add_pic_btn">
-                        <input class="add_pic_btn" type="file" name="+ Ajouter photo">
-                        + Ajouter photo
+                        <input id="upload" class="add_pic_btn" type="file" name="file">
+                        + Ajouter photo"
                     </span>
                     <p> jpg. png :4mo max</p>
+                    <output></output>
                     </div>
                     <div class="form_place">
 			            <label class="title_titre" for="titre">Titre</label>
@@ -215,7 +216,22 @@ function openModal() {
                     document.querySelector(".modale").remove(".modale");
                     document.querySelector(".modale_back").remove(".modale_back");
                     openModal();
-                }
+                } 
+            const input = document.querySelector("input")
+            const output = document.querySelector("output")
+            let imagesArray = []
+            input.addEventListener("change", () => {
+                const file = input.files
+                imagesArray.push(file[0])
+                displayImages()
+                function displayImages() {
+                    let images = ""
+                    imagesArray.forEach((image, index) => {
+                      images += `<img src="${URL.createObjectURL(image)}" class="output_img" alt="image">`
+                    })
+                    output.innerHTML = images
+                  }
+              })
             });
         
             const validBtn = document.querySelector("#valid_btn");
