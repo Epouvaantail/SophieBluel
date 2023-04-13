@@ -175,7 +175,7 @@ li:hover {
 	cursor: pointer;
 }
 
-.filter_active {
+.filter_active  {
 	background: #1D6154;
 	color: white;
 }
@@ -459,7 +459,8 @@ header, main {
 
 .mult_arrow {
 	height: 9px;
-	filter: invert(100%);	
+	filter: invert(100%);
+	cursor: pointer;
 }
 
 hr{
@@ -483,9 +484,9 @@ hr{
 	width: 237px;
 }
 
-#valid_btn {
+.valid_btn {
 	background: #A7A7A7;
-	border: #A7A7A7;
+	border: transparent;
 	width: 237px;
 	height: 36px;
 	border-radius: 60px;
@@ -513,7 +514,7 @@ hr{
 	color: #D65353;
 }
 
-.send_pic {
+.send_pic, #send_pic{
 	background-color: white;
 	text-align: left;
 	display: flex;
@@ -630,7 +631,7 @@ output{
   }
   
   .output_img{
-	margin: -128px -65px ;
+	margin: -145px -65px ;
 	width: 129px;
 	height: 169px;
 	position: relative;
