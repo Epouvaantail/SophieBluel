@@ -1,3 +1,10 @@
+// liens de la barre de navigation
+document.querySelector("#projet__nav").onclick=function() {window.location.href = 'index.html'}
+document.querySelector("#contact__nav").onclick=function() {window.location.href = 'mailto:sophie.bluel@test.tld'}
+document.querySelector("#login__nav").onclick=function() {window.location.href = '#'}
+document.querySelector("#instagram__nav").onclick=function() {window.location.href = '#'}
+
+
 const connect = document.querySelector("#connect").addEventListener("click", function (event) {
     const user = {
         "email": document.querySelector('input[type="email"]').value,
@@ -14,7 +21,7 @@ const connect = document.querySelector("#connect").addEventListener("click", fun
 
     .then(response => {
         if(!response.ok) {
-            window.alert("Identifiants incorrect")
+            document.querySelector(".error").style.display = "inline"
             throw new Error('Identifiants incorrects');
         }
         return response.json();
