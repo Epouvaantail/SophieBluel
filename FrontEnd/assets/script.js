@@ -181,7 +181,6 @@ function openModal() {
             });
         });
         async function FetchDeleteWorks(id) {
-            console.log(id);
             const response = await fetch("http://" + window.location.hostname + `:5678/api/works/${id}`, {
                 method: "DELETE",
                 headers: {
@@ -191,9 +190,8 @@ function openModal() {
             });
             const getWorks = await fetch("http://localhost:5678/api/works");
             const works = await getWorks.json();
-            
+
             function generateProjects(projects) {
-                document.querySelector(".work").innerHTML = "";
                 document.querySelector(".gallery").innerHTML = "";
                 for (let i = 0; i < projects.length; i++) {
                     const project = projects[i];
@@ -207,6 +205,8 @@ function openModal() {
                     figureElement.appendChild(imgElement);
                     figureElement.appendChild(textElement)
                 };
+                document.querySelector(".modale_back").remove(".modale_back");
+                document.querySelector(".modale").remove(".modale");
             }
             generateProjects(works);
         }
@@ -368,8 +368,27 @@ function openModal() {
                         const dataresponse = await response.json()
                         Submit.style.background = "#1D6154"
     
-                        const gallery = document.querySelector('.gallery');
-                        gallery.innerHTML = "";
+                        const getWorks = await fetch("http://localhost:5678/api/works");
+                        const works = await getWorks.json();
+                        
+                        function generateProjects(projects) {
+                            document.querySelector(".gallery").innerHTML = "";
+                            for (let i = 0; i < projects.length; i++) {
+                                const project = projects[i];
+                                const gallery = document.querySelector(".gallery");
+                                const figureElement = document.createElement("figure");
+                                const imgElement = document.createElement("img");
+                                imgElement.src = project.imageUrl;
+                                const textElement = document.createElement("figcaption");
+                                textElement.innerHTML = project.title;
+                                gallery.appendChild(figureElement);
+                                figureElement.appendChild(imgElement);
+                                figureElement.appendChild(textElement)
+                            };
+                        }
+                        generateProjects(works);
+                        document.querySelector(".modale_back").remove(".modale_back");
+                        document.querySelector(".modale").remove(".modale");
                     }
                     catch (error) {
                         console.log("Il y a eu une erreur sur le Fetch: " + error)
