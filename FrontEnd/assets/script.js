@@ -205,8 +205,30 @@ function openModal() {
                     figureElement.appendChild(imgElement);
                     figureElement.appendChild(textElement)
                 };
-                document.querySelector(".modale_back").remove(".modale_back");
-                document.querySelector(".modale").remove(".modale");
+                const works = fetch('http://localhost:5678/api/works',{ method:'get'})
+                .then(works => works.json())
+                .then(data => {
+                    const galleryWork = document.querySelector(".gallery_work");
+                        galleryWork.innerHTML = '';
+                            function generate(data) {
+                                for (let d in data){
+                                galleryWork.insertAdjacentHTML('beforeend', `
+                                    <figure class="work">
+                                        <div class="work_pic">
+                                            <img class="work_img" src="${data[d].imageUrl}" id="${data[d].id}" alt="${data[d].title}">
+                                            <div class="bin_box" id="${data[d].id}">
+                                                <img class="bin" src="assets/icons/bin-svgrepo-com.svg">
+                                            </div>
+                                            <div class="mult_arrow_box">
+                                                <img class="mult_arrow" src="assets/icons/up-down-left-right-solid.svg">
+                                            </div>
+                                        </div>
+                                        <p>éditer</p>
+                                    </figure`)
+                                }
+                            };
+                    generate(data);
+                })
             }
             generateProjects(works);
         }
