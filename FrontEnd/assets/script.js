@@ -4,7 +4,7 @@ document.querySelector("#contact__nav").onclick=function() {window.location.href
 document.querySelector("#login__nav").onclick=function() {window.location.href = 'login_page.html'}
 document.querySelector("#instagram__nav").onclick=function() {window.location.href = '#'}
 
-
+// récuperation des filtres depuis l'API
 const filtre = fetch ('http://localhost:5678/api/categories',{ method:'get'})
     .then(filtre => filtre.json())
     .then( filt => {
