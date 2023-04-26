@@ -4,6 +4,22 @@ document.querySelector("#contact__nav").onclick=function() {window.location.href
 document.querySelector("#login__nav").onclick=function() {window.location.href = 'login_page.html'}
 document.querySelector("#instagram__nav").onclick=function() {window.location.href = '#'}
 
+
+const filtre = fetch ('http://localhost:5678/api/categories',{ method:'get'})
+    .then(filtre => filtre.json())
+    .then( filt => {
+        const filters = document.querySelector(".filters")
+        for (let f in filt) {
+            function generate(filt) {
+                for(let f in filt)
+                filters.insertAdjacentHTML('beforeend', `
+                <button class="filter" id=${filt[f].name}>${filt[f].name}</button>
+                `)
+            }
+        }
+        generate(filt)
+        })
+
 // Récuperation des travaux depuis l'API, et implémentation sur la page
 const works = fetch('http://localhost:5678/api/works',{ method:'get'})
 .then(works => works.json())
@@ -21,6 +37,7 @@ const works = fetch('http://localhost:5678/api/works',{ method:'get'})
                 }}
             };
     generate(data)
+    
 
     // boutons pour filtrer les travaux
     const Tous = document.querySelector("#Tous");
@@ -47,7 +64,7 @@ const works = fetch('http://localhost:5678/api/works',{ method:'get'})
         generate(appartFilter);
     })
 
-    const Hôtels = document.querySelector("#Hôtels");
+    const Hôtels = document.querySelector("#Hotels");
     Hôtels.addEventListener("click", function () {
         const hotelFilter = data.filter(function (data) {
             return data.categoryId === 3;
