@@ -104,10 +104,12 @@ if (sessionStorage.getItem('token')) {
 				<img class="pen_logo" src="/assets/icons/pen-to-square-regular.svg" alt="pen logo">
 				<p class="modify_1" >modifier</p>
 			</div>`);
+            //modifier bouton login en logout
     const loginBtn = document.querySelector("#login__nav");
             loginBtn.innerText = 'logout';
 };
 
+//logout (supprimer le token)
 document.querySelector("#login__nav").addEventListener("click", function (e) {
     if (sessionStorage.getItem("token")) {
         e.preventDefault();
