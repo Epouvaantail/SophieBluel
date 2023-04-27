@@ -28,7 +28,7 @@ const connect = document.querySelector("#connect").addEventListener("click", fun
     })
     .then(data => {
         sessionStorage.setItem('token', data.token);
-        window.location.href = "/index.html"
+        window.location.href = "index.html"
     })
     .catch(error => {
         console.error(error);

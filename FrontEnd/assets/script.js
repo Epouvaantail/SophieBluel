@@ -102,7 +102,7 @@ if (sessionStorage.getItem('token')) {
     const body = document.querySelector('body');
         body.insertAdjacentHTML('afterbegin', `
         <div class="editionMod">
-		    <img src="/assets/icons/pen-to-square-regular.svg" alt="pen logo">
+		    <img src="assets/icons/pen-to-square-regular.svg" alt="pen logo">
 		    <p>Mode édition</p>
 		    <button class="publish" id="publish"> publier les changements </button>
 	    </div>`);
@@ -111,14 +111,14 @@ if (sessionStorage.getItem('token')) {
         portfolio.insertAdjacentHTML('afterbegin', `
         <div class="modification">
 			<h2>Mes Projets</h2>
-			<img class"pen_logo" src="/assets/icons/pen-to-square-regular.svg" alt="pen logo">
+			<img class"pen_logo" src="assets/icons/pen-to-square-regular.svg" alt="pen logo">
 			<p class="modify_2" >modifier</p>
 		</div>`);
     document.querySelector(".filters").remove(".filters")
     const mainImg = document.querySelector('#introduction figure');
         mainImg.insertAdjacentHTML('beforeend', `
             <div class="modify_picture">
-				<img class="pen_logo" src="/assets/icons/pen-to-square-regular.svg" alt="pen logo">
+				<img class="pen_logo" src="assets/icons/pen-to-square-regular.svg" alt="pen logo">
 				<p class="modify_1" >modifier</p>
 			</div>`);
             //modifier bouton login en logout
